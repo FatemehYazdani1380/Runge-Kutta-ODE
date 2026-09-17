@@ -3,14 +3,13 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sympy import Eq, Function, dsolve, lambdify, sin, symbols
+
 def f(x, y):
     return np.sin(x) + y
-
 
 def runge_kutta_4(x0, y0, h, n):
     """Solve an ODE using the classical fourth-order Runge-Kutta method."""
     results = []
-
     x = x0
     y = y0
 
