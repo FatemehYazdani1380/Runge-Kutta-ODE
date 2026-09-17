@@ -128,10 +128,10 @@ def main():
     df["absolute_error"] = np.abs(df["y_exact"] - df["y_rk4"])
 
     # Display results
-    print("\nNumerical and Analytical Solutions:\n")
+    print("\Numerical and Analytical Solutions:\n")
     print(df.to_string(index=False))
 
-    print("\nMaximum Absolute Error:")
+    print("\Maximum Absolute Error:")
     print(f"{df['absolute_error'].max():.6e}")
 
     # Plot results
