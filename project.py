@@ -1,55 +1,14 @@
-"""
-Runge-Kutta 4th Order Method for Solving a First-Order ODE
-
-This script solves the differential equation:
-
-    dy/dx = sin(x) + y
-
-using the classical fourth-order Runge-Kutta (RK4) method
-and compares the numerical solution with the analytical solution.
-
-Author: Fatemeh Yazdani
-"""
-
+"""Runge-Kutta 4th Order Method for Solving a First-Order ODE"""
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sympy import Eq, Function, dsolve, lambdify, sin, symbols
-
-
 def f(x, y):
-    """
-    Define the first-order differential equation.
-
-    dy/dx = sin(x) + y
-
-    Parameters:
-    x : float
-        Independent variable.
-    y : float
-        Dependent variable.
-    float
-        Value of dy/dx.
-    """
     return np.sin(x) + y
 
 
 def runge_kutta_4(x0, y0, h, n):
-    """
-    Solve an ODE using the classical fourth-order Runge-Kutta method.
-
-    Parameters:
-    x0 : float
-        Initial value of x.
-    y0 : float
-        Initial value of y.
-    h : float
-        Step size.
-    n : int
-        Number of steps.
-    list of tuple
-        Numerical solution as (x, y) pairs.
-    """
+    """Solve an ODE using the classical fourth-order Runge-Kutta method."""
     results = []
 
     x = x0
@@ -70,15 +29,6 @@ def runge_kutta_4(x0, y0, h, n):
 
 
 def analytical_solution(y0):
-    """
-    Calculate the analytical solution of the ODE using SymPy.
-
-    Parameters:
-    y0 : float
-        Initial condition y(0) = y0.
-    function
-        Numerical function representing the analytical solution.
-    """
     x = symbols("x")
     y = Function("y")
 
@@ -86,7 +36,6 @@ def analytical_solution(y0):
         y(x).diff(x),
         sin(x) + y(x)
     )
-
     solution = dsolve(
         equation,
         y(x),
@@ -97,7 +46,6 @@ def analytical_solution(y0):
 
 
 def main():
-    """Run the numerical and analytical solution comparison."""
 
     # Problem parameters
     x0 = 0.0
