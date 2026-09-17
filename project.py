@@ -23,15 +23,11 @@ def f(x, y):
 
     dy/dx = sin(x) + y
 
-    Parameters
-    ----------
+    Parameters:
     x : float
         Independent variable.
     y : float
         Dependent variable.
-
-    Returns
-    -------
     float
         Value of dy/dx.
     """
@@ -42,8 +38,7 @@ def runge_kutta_4(x0, y0, h, n):
     """
     Solve an ODE using the classical fourth-order Runge-Kutta method.
 
-    Parameters
-    ----------
+    Parameters:
     x0 : float
         Initial value of x.
     y0 : float
@@ -52,9 +47,6 @@ def runge_kutta_4(x0, y0, h, n):
         Step size.
     n : int
         Number of steps.
-
-    Returns
-    -------
     list of tuple
         Numerical solution as (x, y) pairs.
     """
@@ -81,13 +73,9 @@ def analytical_solution(y0):
     """
     Calculate the analytical solution of the ODE using SymPy.
 
-    Parameters
-    ----------
+    Parameters:
     y0 : float
         Initial condition y(0) = y0.
-
-    Returns
-    -------
     function
         Numerical function representing the analytical solution.
     """
